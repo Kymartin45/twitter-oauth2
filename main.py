@@ -1,12 +1,14 @@
 import base64
 from dotenv import dotenv_values
 import requests
+import json
 
 config = dotenv_values('.env')
 CLIENT_ID = config.get('CLIENT_ID')
 CLIENT_SECRET = config.get('CLIENT_SECRET') 
 REDIRECT_URI = config.get('REDIRECT_URI')
 
+# Authorize user account
 def authUrl():
     auth_url = 'https://twitter.com/i/oauth2/authorize'
     scopes = ['tweet.write', 'tweet.read', 'users.read', 'offline.access']
@@ -66,4 +68,42 @@ def refreshToken():
     }
     r = requests.post(refresh_url, headers=headers, params=data)
     print(r.json()['access_token']) 
+    refreshToken.access_token = r.json()['access_token']
 refreshToken()
+
+# Creates a Tweet from authenticated user
+def postTweet(message):
+    post_tweet_url = 'https://api.twitter.com/2/tweets'
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {refreshToken.access_token}'
+    }
+    message = {
+        'text': message
+    }
+    r = requests.post(post_tweet_url, headers=headers, data=json.dumps(message))
+    print(r.json())
+message = input('Whats on your mind?:\n') # Send your tweet
+postTweet(message)    
+
+# get user by username 
+def getUser(username):
+    req_user_url = 'https://api.twitter.com/2/users/by'
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {refreshToken.access_token}'
+    }
+    username = {
+        'usernames': username
+    }
+    r = requests.get(req_user_url, headers=headers, params=username)
+    data = r.text
+    parsed_data = json.loads(data)
+    print(r.json())
+    
+    # loop response for user id
+    for user in parsed_data['data']:
+        getUser.user_id = user['id']
+        print(getUser.user_id)
+username = input('Enter a username:\n')
+getUser(username)
