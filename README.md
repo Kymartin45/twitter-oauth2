@@ -32,7 +32,7 @@ Add `.env` to root directory of your project
 └── main.py
 ```
 
-```
+```dosini
 TWITTER_CLIENT_ID=
 TWITTER_CLIENT_SECRET=
 TWITTER_REDIRECT_URI=
