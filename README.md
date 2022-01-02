@@ -18,9 +18,9 @@ pip install python-dotenv
 Set up your environment variables. You can find credentials in your [Project & Apps developer portal](https://developer.twitter.com/en/portal/dashboard) 
 
 ```python
-CLIENT_ID = {YOUR_CLIENT_ID}
-CLIENT_SECRET = {YOUR_CLIENT_SECRET}
-REDIRECT_URI = {YOUR_REDIRECT_URI}
+CLIENT_ID = {TWITTER_CLIENT_ID}
+CLIENT_SECRET = {TWITTER_CLIENT_SECRET}
+REDIRECT_URI = {TWITTER_REDIRECT_URI}
 ``` 
 
 ### Using .env 
