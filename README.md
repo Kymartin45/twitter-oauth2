@@ -8,7 +8,7 @@ Sample code flow for Twitter API v2 endpoints
 * [Create project/app in dashboard](https://developer.twitter.com/en/portal/dashboard)
 
 ### Python environment setup 
-Python 3.10.1 required
+Python 3 required, built on 3.10.1
 
 ```bash
 pip install requests
