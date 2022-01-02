@@ -12,7 +12,6 @@ Python 3 required to run code
 
 ```bash
 pip install requests
-pip install base64
 pip install python-dotenv
 ```
 ### Usage
