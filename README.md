@@ -14,6 +14,12 @@ Python 3 required, built on 3.10.1
 pip install requests
 pip install python-dotenv
 ```
+
+Install necessary packages
+```bash
+pip install -r requirements.txt
+```
+
 ### Usage
 Set up your environment variables. You can find credentials in your [Project & Apps developer portal](https://developer.twitter.com/en/portal/dashboard) 
 
@@ -37,3 +43,4 @@ TWITTER_CLIENT_ID=
 TWITTER_CLIENT_SECRET=
 TWITTER_REDIRECT_URI=
 ```
+
