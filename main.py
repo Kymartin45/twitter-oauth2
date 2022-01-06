@@ -1,12 +1,12 @@
-import base64
 from dotenv import dotenv_values
+import base64
 import requests
 import json
 
 config = dotenv_values('.env')
-CLIENT_ID = config.get('CLIENT_ID')
-CLIENT_SECRET = config.get('CLIENT_SECRET') 
-REDIRECT_URI = config.get('REDIRECT_URI')
+CLIENT_ID = config.get('TWITTER_CLIENT_ID')
+CLIENT_SECRET = config.get('TWITTER_CLIENT_SECRET') 
+REDIRECT_URI = config.get('TWITTER_REDIRECT_URI')
 
 # Authorize user account
 def authUrl():
@@ -107,3 +107,4 @@ def getUser(username):
         print(getUser.user_id)
 username = input('Enter a username:\n')
 getUser(username)
+
