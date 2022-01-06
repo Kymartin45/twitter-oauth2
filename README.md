@@ -7,40 +7,19 @@ Sample code flow for Twitter API v2 endpoints
 ## Getting started 
 * [Create project/app in dashboard](https://developer.twitter.com/en/portal/dashboard)
 
-### Python environment setup 
-Python 3 required, built on 3.10.1
+### Installing (Python 3+)
+*Built on 3.10.1*
 
-```bash
-pip install requests
-pip install python-dotenv
-```
-
-Install necessary packages
+Clone the repo and install necessary packages with pip:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Usage
-Set up your environment variables. You can find credentials in your [Project & Apps developer portal](https://developer.twitter.com/en/portal/dashboard) 
+Get started quickly by following these steps:
 
-```python
-CLIENT_ID = {TWITTER_CLIENT_ID}
-CLIENT_SECRET = {TWITTER_CLIENT_SECRET}
-REDIRECT_URI = {TWITTER_REDIRECT_URI}
-``` 
-
-### Using .env 
-* [Python-dotenv Documenation](https://pypi.org/project/python-dotenv/)
-
-Add `.env` to root directory of your project
-```
-├── .env
-└── main.py
-```
-
-```bash
-TWITTER_CLIENT_ID=
-TWITTER_CLIENT_SECRET=
-TWITTER_REDIRECT_URI=
-```
+1. Setup your Twitter developer account at the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)
+2. Supply the values in `.env.example` and rename it to `.env`.
+3. Start the server by running `python3 main.py`.
+4. View terminal and try it out!
 
